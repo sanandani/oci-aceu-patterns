@@ -1,0 +1,13 @@
+ALTER SESSION SET CONTAINER=FREEPDB1;
+ALTER SESSION SET CURRENT_SCHEMA=ACEU;
+INSERT INTO profiles(profile_id,display_name,context_name,payload,skills_vector) VALUES(1001,'Synthetic Builder A','platform','{"skills":["sql","cloud","security"],"prior_skills":["sql","cloud"],"roles":["engineer"],"prior_roles":["engineer"],"history":["synthetic"],"authored_skills":["sql","cloud"],"credibility_signals":[{"status":"verified","strength":0.9}],"context_relevance":0.9}',TO_VECTOR('[0,1,1,0,0,0,1,0,0,0]'));
+INSERT INTO profiles(profile_id,display_name,context_name,payload,skills_vector) VALUES(1002,'Synthetic Builder B','platform','{"skills":["java","mentoring","writing"],"prior_skills":["java","mentoring"],"roles":["mentor"],"prior_roles":["mentor"],"history":["synthetic"],"authored_skills":["java"],"credibility_signals":[{"status":"inferred","strength":0.7}],"context_relevance":0.8}',TO_VECTOR('[1,0,0,0,1,0,0,1,0,0]'));
+INSERT INTO profiles(profile_id,display_name,context_name,payload,skills_vector) VALUES(1003,'Synthetic Builder C','platform','{"skills":["testing","governance","design"],"prior_skills":["testing"],"roles":["reviewer"],"prior_roles":["reviewer"],"history":["synthetic"],"authored_skills":["testing"],"credibility_signals":[{"status":"verified","strength":0.8}],"context_relevance":0.85}',TO_VECTOR('[0,0,0,1,0,0,0,0,1,1]'));
+INSERT INTO consent(profile_id,consented,scope) VALUES(1001,'Y','score,rank');
+INSERT INTO consent(profile_id,consented,scope) VALUES(1002,'Y','score,rank');
+INSERT INTO consent(profile_id,consented,scope) VALUES(1003,'Y','score,rank');
+INSERT INTO interactions(profile_id,interaction_type,quality,reciprocity) VALUES(1001,'feedback',.8,.7);
+INSERT INTO interactions(profile_id,interaction_type,quality,reciprocity) VALUES(1001,'mentoring',.9,.8);
+INSERT INTO interactions(profile_id,interaction_type,quality,reciprocity) VALUES(1002,'recognition',.75,.7);
+INSERT INTO interactions(profile_id,interaction_type,quality,reciprocity) VALUES(1003,'collaboration',.7,.75);
+COMMIT;
