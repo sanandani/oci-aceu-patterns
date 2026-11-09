@@ -14,6 +14,6 @@
 
 **Cleanup:** `docker compose down -v`.
 
-**Article:** [JDBC/UCP to Oracle over TLS or mTLS with wallets](https://www.imshubh.com/blog.html#oracle-ace).
+**Article:** [JDBC/UCP to Oracle over TLS or mTLS with wallets](https://www.imshubh.com/articles/oracle-ace/jdbc-ucp-to-oracle-over-tls-or-mtls-with-wallets.html).
 
-**Tested 2026-11-08 (PST) on macOS arm64, Docker 29.8.0, Temurin OpenJDK 21.0.8, gvenzl/oracle-free:23-slim-faststart (linux/arm64).**
+**Article date:** 2026-08-11 · **Verified date (maintainer-reported):** Nov 8, 2026. **Local test evidence:** Plain-TCP path tested on 2026-11-08 (PST) with macOS arm64, Docker 29.8.0, Temurin OpenJDK 21.0.8, gvenzl/oracle-free:23-slim-faststart (linux/arm64). TLS/wallet path was not exercised in that local run.

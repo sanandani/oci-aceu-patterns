@@ -14,6 +14,6 @@
 
 **Cleanup:** `docker compose down -v`.
 
-**Article:** [Oracle DB: invoker's vs definer's rights for least-privilege code](https://www.imshubh.com/blog.html#oracle-ace).
+**Article:** [Oracle DB: invoker's vs definer's rights for least-privilege code](https://www.imshubh.com/articles/oracle-ace/oracle-db-invoker-s-vs-definer-s-rights-for-least-privilege-code.html).
 
-**Tested 2026-11-08 (PST) on macOS arm64, Docker 29.8.0, Temurin OpenJDK 21.0.8, gvenzl/oracle-free:23-slim-faststart (linux/arm64).**
+**Article date:** 2026-05-21 · **Verified date (maintainer-reported):** Nov 8, 2026. **Local test evidence:** **Tested 2026-11-08 (PST) on macOS arm64, Docker 29.8.0, Temurin OpenJDK 21.0.8, gvenzl/oracle-free:23-slim-faststart (linux/arm64).**

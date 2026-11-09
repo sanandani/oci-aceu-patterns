@@ -14,6 +14,6 @@
 
 **Cleanup:** `Remove temporary identities, secrets, wallet files, and test resources using the service Console/CLI.`.
 
-**Article:** [Vault + DB wallets: secure distribution patterns (illustrative)](https://www.imshubh.com/blog.html#oracle-ace).
+**Article:** [Vault + DB wallets: secure distribution patterns (illustrative)](https://www.imshubh.com/articles/oracle-ace/vault-db-wallets-secure-distribution-patterns-illustrative.html).
 
-**TODO tested-on:** ____________________
+**Article date:** 2026-02-15 · **Verified date (maintainer-reported):** Nov 8, 2026.

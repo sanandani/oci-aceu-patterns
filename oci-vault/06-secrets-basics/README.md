@@ -14,6 +14,6 @@
 
 **Cleanup:** `terraform -chdir=../../terraform destroy only after reviewing the plan; remove manually created resources`.
 
-**Article:** [Practical secrets with OCI Vault: creation, rotation, and usage](https://www.imshubh.com/blog.html#oracle-ace).
+**Article:** [Practical secrets with OCI Vault: creation, rotation, and usage](https://www.imshubh.com/articles/oracle-ace/practical-secrets-with-oci-vault-creation-rotation-and-usage.html).
 
-**TODO tested-on:** ____________________
+**Article date:** 2026-01-23 · **Verified date (maintainer-reported):** Nov 8, 2026.

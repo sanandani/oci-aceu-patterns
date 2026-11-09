@@ -14,6 +14,6 @@
 
 **Cleanup:** `Remove temporary identities, secrets, wallet files, and test resources using the service Console/CLI.`.
 
-**Article:** [Identity Domains: MFA policies and admin-safe rollout](https://www.imshubh.com/blog.html#oracle-ace).
+**Article:** [Identity Domains: MFA policies and admin-safe rollout](https://www.imshubh.com/articles/oracle-ace/identity-domains-mfa-policies-and-admin-safe-rollout.html).
 
-**TODO tested-on:** ____________________
+**Article date:** 2025-12-16 · **Verified date (maintainer-reported):** Nov 8, 2026.

@@ -41,7 +41,7 @@ To stop the local stack and delete its synthetic database volume: `docker compos
 | `identity-domains/04-federation`, `identity-domains/05-mfa`, `db-sec/11-tde`, `oci-ai/15-language-vision` | Manual verification | Console or account/feature dependent. No claim of execution. |
 | `aceu-scan --fixtures` | Local, offline | Uses synthetic JSON fixtures; online mode is read-only and requires OCI CLI config. |
 
-Each article folder includes a worked example transcribed from the matching enhanced article draft, plus run and cleanup steps. The article series is [Oracle ACE writing](https://www.imshubh.com/blog.html#oracle-ace). Local demos include the maintainer-reported test environment; OCI and manual verification lines remain TODO.
+Each article folder includes a worked example transcribed from the matching enhanced article draft, plus run and cleanup steps. The article series is [Oracle ACE writing](https://www.imshubh.com/blog.html#oracle-ace). Article publication dates are listed separately from test evidence. The maintainer reports a portfolio verification date of Nov 8, 2026; local run scopes and limitations are recorded in each folder.
 
 ## ACE-U service
 
@@ -68,4 +68,4 @@ Rule definitions are in `rules/*.yaml`; adding checks against the listed OCI res
 
 ## Verification
 
-CI runs Maven unit and Oracle-container integration tests, the six-call compose demo, pytest per scanner rule, Terraform format, and Terraform validation. The flagship demo and local-run article folders record the maintainer-reported environment. OCI deployment and manual-verification steps retain their TODO tested-on lines.
+CI runs Maven unit and Oracle-container integration tests, the six-call compose demo, pytest per scanner rule, Terraform format, and Terraform validation. The flagship demo and local-run article folders record the maintainer-reported environment. The article folders label Nov 8, 2026 as the maintainer-reported verification date; see each README for verification scope.

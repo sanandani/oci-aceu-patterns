@@ -14,6 +14,6 @@
 
 **Cleanup:** `terraform -chdir=../../terraform destroy only after reviewing the plan; remove manually created resources`.
 
-**Article:** [Using OCI Instance Principals without leaking credentials](https://www.imshubh.com/blog.html#oracle-ace).
+**Article:** [Using OCI Instance Principals without leaking credentials](https://www.imshubh.com/articles/oracle-ace/using-oci-instance-principals-without-leaking-credentials.html).
 
-**TODO tested-on:** ____________________
+**Article date:** 2025-08-19 · **Verified date (maintainer-reported):** Nov 8, 2026.

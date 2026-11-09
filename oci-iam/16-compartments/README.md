@@ -14,6 +14,6 @@
 
 **Cleanup:** `terraform -chdir=../../terraform destroy only after reviewing the plan; remove manually created resources`.
 
-**Article:** [Compartment design and movement: policy implications](https://www.imshubh.com/blog.html#oracle-ace).
+**Article:** [Compartment design and movement: policy implications](https://www.imshubh.com/articles/oracle-ace/compartment-design-and-movement-policy-implications.html).
 
-**TODO tested-on:** ____________________
+**Article date:** 2026-10-16 · **Verified date (maintainer-reported):** Nov 8, 2026.

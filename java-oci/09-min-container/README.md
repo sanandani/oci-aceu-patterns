@@ -14,6 +14,6 @@
 
 **Cleanup:** `docker compose down -v`.
 
-**Article:** [Minimal Java container on OCI with TLS to DB](https://www.imshubh.com/blog.html#oracle-ace).
+**Article:** [Minimal Java container on OCI with TLS to DB](https://www.imshubh.com/articles/oracle-ace/minimal-java-container-on-oci-with-tls-to-db.html).
 
-**Tested 2026-11-08 (PST) on macOS arm64, Docker 29.8.0, Temurin OpenJDK 21.0.8, gvenzl/oracle-free:23-slim-faststart (linux/arm64).**
+**Article date:** 2026-04-14 · **Verified date (maintainer-reported):** Nov 8, 2026. **Local test evidence:** **Tested 2026-11-08 (PST) on macOS arm64, Docker 29.8.0, Temurin OpenJDK 21.0.8, gvenzl/oracle-free:23-slim-faststart (linux/arm64).**

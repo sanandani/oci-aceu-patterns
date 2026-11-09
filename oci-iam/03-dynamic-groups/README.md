@@ -14,6 +14,6 @@
 
 **Cleanup:** `terraform -chdir=../../terraform destroy only after reviewing the plan; remove manually created resources`.
 
-**Article:** [Dynamic groups with tag-based scoping (illustrative patterns)](https://www.imshubh.com/blog.html#oracle-ace).
+**Article:** [Dynamic groups with tag-based scoping (illustrative patterns)](https://www.imshubh.com/articles/oracle-ace/dynamic-groups-with-tag-based-scoping-illustrative-patterns.html).
 
-**TODO tested-on:** ____________________
+**Article date:** 2025-10-02 · **Verified date (maintainer-reported):** Nov 8, 2026.

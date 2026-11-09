@@ -14,6 +14,6 @@
 
 **Cleanup:** `terraform -chdir=../../terraform destroy only after reviewing the plan; remove manually created resources`.
 
-**Article:** [Least-privilege IAM policies for workloads (compartment-first)](https://www.imshubh.com/blog.html#oracle-ace).
+**Article:** [Least-privilege IAM policies for workloads (compartment-first)](https://www.imshubh.com/articles/oracle-ace/least-privilege-iam-policies-for-workloads-compartment-first.html).
 
-**TODO tested-on:** ____________________
+**Article date:** 2025-09-26 · **Verified date (maintainer-reported):** Nov 8, 2026.

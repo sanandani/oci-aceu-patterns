@@ -14,6 +14,6 @@
 
 **Cleanup:** `Remove temporary identities, secrets, wallet files, and test resources using the service Console/CLI.`.
 
-**Article:** [AI Language and Vision: secure triage pipelines (illustrative)](https://www.imshubh.com/blog.html#oracle-ace).
+**Article:** [AI Language and Vision: secure triage pipelines (illustrative)](https://www.imshubh.com/articles/oracle-ace/ai-language-and-vision-secure-triage-pipelines-illustrative.html).
 
-**TODO tested-on:** ____________________
+**Article date:** 2026-10-10 · **Verified date (maintainer-reported):** Nov 8, 2026.

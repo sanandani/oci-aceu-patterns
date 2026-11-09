@@ -14,6 +14,6 @@
 
 **Cleanup:** `Remove temporary identities, secrets, wallet files, and test resources using the service Console/CLI.`.
 
-**Article:** [TDE quickstart and keystore hygiene](https://www.imshubh.com/blog.html#oracle-ace).
+**Article:** [TDE quickstart and keystore hygiene](https://www.imshubh.com/articles/oracle-ace/tde-quickstart-and-keystore-hygiene.html).
 
-**TODO tested-on:** ____________________
+**Article date:** 2026-06-28 · **Verified date (maintainer-reported):** Nov 8, 2026.
