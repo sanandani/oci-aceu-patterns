@@ -1,0 +1,7 @@
+id: dynamic-group-missing-tag-condition
+severity: medium
+resource: dynamic_groups
+path: matching_rule
+not_contains: "tag."
+message: Dynamic group has no tag condition; review its membership scope.
+documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingdynamicgroups.htm

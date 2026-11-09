@@ -1,0 +1,7 @@
+id: broad-tenancy-policy
+severity: high
+resource: policies
+path: statements
+contains: "manage all-resources in tenancy"
+message: Policy grants broad tenancy-wide manage all-resources access.
+documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/policysyntax.htm

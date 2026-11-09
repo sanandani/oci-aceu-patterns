@@ -1,0 +1,9 @@
+{
+  "note": "Entirely synthetic fixture data; no OCI account or real resource identifiers.",
+  "resources": {
+    "policies": [{"id":"fixture-policy-1","statements":["Allow group Example to manage all-resources in tenancy"]}],
+    "dynamic_groups": [{"id":"fixture-dg-1","matching_rule":"Any {instance.compartment.id = 'placeholder'}"}],
+    "secrets": [{"id":"fixture-secret-1","rotation_config":null}],
+    "container_repositories": [{"id":"fixture-repo-1","is_public":true}]
+  }
+}
