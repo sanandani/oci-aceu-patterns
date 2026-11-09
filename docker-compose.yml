@@ -20,8 +20,8 @@ services:
       DB_USER: aceu_app
       DB_PASSWORD: aceu_app_local_only
       UCP_MIN: "2"
-      UCP_MAX: "8"
-      UCP_WAIT_SECONDS: "5"
+      UCP_MAX: "20"
+      UCP_WAIT_SECONDS: "3"
     ports: ["8080:8080"]
     depends_on:
       oracle:

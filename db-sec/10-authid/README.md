@@ -1,19 +1,19 @@
 # Oracle DB: invoker's vs definer's rights for least-privilege code
 
-**What it shows:** Runnable PL/SQL package rights example is in sql/authid.sql; flagship service uses AUTHID CURRENT_USER shared logic and a narrow ACCESSIBLE BY wrapper.
+**Runs where:** Local Oracle Free.
 
-**Runnable code:** [Runnable PL/SQL example](authid.sql)
+**What it shows:** Article AUTHID CURRENT_USER and narrow ACCESSIBLE BY example, adapted into the runnable schema script.
 
-**Prerequisites:** See the run command below. OCI examples require an OCI tenancy and CLI configured with placeholders; local examples require Java 21, Maven, Docker, and Docker Compose as applicable.
+**Article example:** [article-example.md](article-example.md)
 
-**Run:** `sqlplus user@FREEPDB1 @sql/authid.sql`
+**Prerequisites:** Docker Compose and Oracle Database Free.
 
-**Expected output:** The command succeeds and reports the created resource, successful connection, or Terraform validation. For manual steps, record the console verification result locally.
+**Run:** `docker compose up -d oracle && docker compose exec -T oracle sqlplus -s aceu/aceu_local_only@localhost:1521/FREEPDB1 < db-sec/10-authid/authid.sql`
 
-**Cleanup:** For local containers run `docker compose down -v`. For OCI resources, run `terraform -chdir=terraform destroy` only after reviewing the plan and remove any manually-created Identity Domain policies or secrets.
+**Expected output:** The script prints the invoker procedure output and confirms the definer package changed the period status.
 
-**Article:** [Oracle DB: invoker's vs definer's rights for least-privilege code](https://www.imshubh.com/blog.html#oracle-ace) (TODO: replace with the direct article URL).
+**Cleanup:** `docker compose down -v`.
 
-**Source fidelity:** The referenced article-specific `.docx` source was not present in this workspace. This runnable example is reconstructed from the published article topic; replace/compare it with the source document when available.
+**Article:** [Oracle DB: invoker's vs definer's rights for least-privilege code](https://www.imshubh.com/blog.html#oracle-ace).
 
 **TODO tested-on:** ____________________

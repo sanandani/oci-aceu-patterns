@@ -1,17 +1,19 @@
 # AI Language and Vision: secure triage pipelines (illustrative)
 
-**What it shows:** Manual runbook outlines service principal scope, redaction, bucket lifecycle, and a non-sensitive synthetic document flow.
+**Runs where:** Manual verification.
 
-**Prerequisites:** See the run command below. OCI examples require an OCI tenancy and CLI configured with placeholders; local examples require Java 21, Maven, Docker, and Docker Compose as applicable.
+**What it shows:** OCI Language PII masking and Vision Object Storage document detection examples.
 
-**Run:** `Manual verification; OCI AI Language/Vision service availability and pricing vary.`
+**Article example:** [article-example.md](article-example.md)
 
-**Expected output:** The command succeeds and reports the created resource, successful connection, or Terraform validation. For manual steps, record the console verification result locally.
+**Prerequisites:** See the runbook; OCI account and feature access may be required.
 
-**Cleanup:** For local containers run `docker compose down -v`. For OCI resources, run `terraform -chdir=terraform destroy` only after reviewing the plan and remove any manually-created Identity Domain policies or secrets.
+**Run:** `Follow runbook.md with synthetic input in an OCI account.`
 
-**Article:** [AI Language and Vision: secure triage pipelines (illustrative)](https://www.imshubh.com/blog.html#oracle-ace) (TODO: replace with the direct article URL).
+**Expected output:** Language response contains masked text; Vision response has a request ID.
 
-**Source fidelity:** The referenced article-specific `.docx` source was not present in this workspace. This runnable example is reconstructed from the published article topic; replace/compare it with the source document when available.
+**Cleanup:** `Remove temporary identities, secrets, wallet files, and test resources using the service Console/CLI.`.
+
+**Article:** [AI Language and Vision: secure triage pipelines (illustrative)](https://www.imshubh.com/blog.html#oracle-ace).
 
 **TODO tested-on:** ____________________

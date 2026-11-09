@@ -1,19 +1,19 @@
 # Vault + DB wallets: secure distribution patterns (illustrative)
 
-**What it shows:** Runbook/Terraform demonstrates private secret storage metadata and wallet file handling boundaries.
+**Runs where:** OCI / CLI + runtime code.
 
-**Runnable code:** [Wallet handling script](wallet-rotation.sh) and [Vault module](../../terraform/modules/vault/main.tf)
+**What it shows:** Wallet generation, base64 secret upload, and owner-only wallet reconstruction example.
 
-**Prerequisites:** See the run command below. OCI examples require an OCI tenancy and CLI configured with placeholders; local examples require Java 21, Maven, Docker, and Docker Compose as applicable.
+**Article example:** [article-example.md](article-example.md)
 
-**Run:** `terraform -chdir=terraform init && terraform -chdir=terraform validate`. To provision in your tenancy, copy `terraform/terraform.tfvars.example` to ignored `terraform/local.tfvars`, replace placeholders with your account/network/image values, inspect `terraform -chdir=terraform plan -var-file=local.tfvars`, then apply only after reviewing the resources.
+**Prerequisites:** See the runbook; OCI account and feature access may be required.
 
-**Expected output:** The command succeeds and reports the created resource, successful connection, or Terraform validation. For manual steps, record the console verification result locally.
+**Run:** `Review wallet-rotation.sh; supply OCI placeholders only in your shell.`
 
-**Cleanup:** For local containers run `docker compose down -v`. For OCI resources, run `terraform -chdir=terraform destroy -var-file=local.tfvars` only after reviewing the plan and remove any manually-created Identity Domain policies or secrets.
+**Expected output:** CLI steps require an Autonomous Database and OCI Vault.
 
-**Article:** [Vault + DB wallets: secure distribution patterns (illustrative)](https://www.imshubh.com/blog.html#oracle-ace) (TODO: replace with the direct article URL).
+**Cleanup:** `Remove temporary identities, secrets, wallet files, and test resources using the service Console/CLI.`.
 
-**Source fidelity:** The referenced article-specific `.docx` source was not present in this workspace. This runnable example is reconstructed from the published article topic; replace/compare it with the source document when available.
+**Article:** [Vault + DB wallets: secure distribution patterns (illustrative)](https://www.imshubh.com/blog.html#oracle-ace).
 
 **TODO tested-on:** ____________________

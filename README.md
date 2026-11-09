@@ -37,7 +37,7 @@ To stop the local stack and delete its synthetic database volume: `docker compos
 | `identity-domains/04-federation`, `identity-domains/05-mfa`, `db-sec/11-tde`, `oci-ai/15-language-vision` | Manual verification | Console or account/feature dependent. No claim of execution. |
 | `aceu-scan --fixtures` | Local, offline | Uses synthetic JSON fixtures; online mode is read-only and requires OCI CLI config. |
 
-Every article README includes run/cleanup instructions, its article-series link as a TODO, and a `TODO tested-on` line. The website currently exposes the series landing page at [Oracle ACE writing](https://www.imshubh.com/blog.html#oracle-ace). Article-specific `.docx` drafts were not in the workspace when this portfolio was assembled; examples are reconstructed from the published titles and include that source-fidelity TODO.
+Each article folder includes a worked example transcribed from the matching enhanced article draft, plus run and cleanup steps. The article series landing page is [Oracle ACE writing](https://www.imshubh.com/blog.html#oracle-ace). Each README keeps a `TODO tested-on` line for the maintainer to fill after running that individual demo.
 
 ## ACE-U service
 

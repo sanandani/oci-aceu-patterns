@@ -1,19 +1,19 @@
 # Using OCI Instance Principals without leaking credentials
 
-**What it shows:** OCI SDK uses instance principals; see terraform/modules/ampere and README for deployment.
+**Runs where:** OCI / Terraform.
 
-**Runnable code:** [Ampere and instance-principal deployment module](../../terraform/modules/ampere/main.tf)
+**What it shows:** Instance principal Java SDK example and compartment-plus-tag dynamic-group rule.
 
-**Prerequisites:** See the run command below. OCI examples require an OCI tenancy and CLI configured with placeholders; local examples require Java 21, Maven, Docker, and Docker Compose as applicable.
+**Article example:** [article-example.md](article-example.md)
 
-**Run:** `Terraform deploys a tagged Ampere instance; runtime principal configuration is documented in the service container.`
+**Prerequisites:** OCI CLI/Terraform and configured OCI tenancy.
 
-**Expected output:** The command succeeds and reports the created resource, successful connection, or Terraform validation. For manual steps, record the console verification result locally.
+**Run:** `terraform -chdir=../../terraform init && terraform -chdir=../../terraform validate`
 
-**Cleanup:** For local containers run `docker compose down -v`. For OCI resources, run `terraform -chdir=terraform destroy -var-file=local.tfvars` only after reviewing the plan and remove any manually-created Identity Domain policies or secrets.
+**Expected output:** Terraform validates the portfolio configuration; apply requires OCI placeholders.
 
-**Article:** [Using OCI Instance Principals without leaking credentials](https://www.imshubh.com/blog.html#oracle-ace) (TODO: replace with the direct article URL).
+**Cleanup:** `terraform -chdir=../../terraform destroy only after reviewing the plan; remove manually created resources`.
 
-**Source fidelity:** The referenced article-specific `.docx` source was not present in this workspace. This runnable example is reconstructed from the published article topic; replace/compare it with the source document when available.
+**Article:** [Using OCI Instance Principals without leaking credentials](https://www.imshubh.com/blog.html#oracle-ace).
 
 **TODO tested-on:** ____________________

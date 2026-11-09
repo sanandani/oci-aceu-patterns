@@ -1,9 +1,29 @@
--- Synthetic least-privilege demonstration. Execute as schema owner in Oracle Free.
-CREATE TABLE authid_demo(id NUMBER PRIMARY KEY, note VARCHAR2(80));
-INSERT INTO authid_demo VALUES(1,'synthetic'); COMMIT;
-CREATE OR REPLACE PROCEDURE invoker_read AUTHID CURRENT_USER IS n NUMBER; BEGIN SELECT COUNT(*) INTO n FROM authid_demo; DBMS_OUTPUT.PUT_LINE('invoker rows='||n); END;
-/
-CREATE OR REPLACE PROCEDURE owner_read AUTHID DEFINER IS n NUMBER; BEGIN SELECT COUNT(*) INTO n FROM authid_demo; DBMS_OUTPUT.PUT_LINE('definer rows='||n); END;
-/
+-- Article 10 example, adapted with synthetic tables for Oracle Free.
 SET SERVEROUTPUT ON
-EXEC invoker_read; EXEC owner_read;
+CREATE TABLE orders (order_id NUMBER PRIMARY KEY, status VARCHAR2(20));
+INSERT INTO orders VALUES (1, 'OPEN');
+COMMIT;
+CREATE OR REPLACE PROCEDURE list_my_orders AUTHID CURRENT_USER AS
+BEGIN
+  FOR r IN (SELECT order_id, status FROM orders) LOOP
+    DBMS_OUTPUT.PUT_LINE(r.order_id || ' ' || r.status);
+  END LOOP;
+END;
+/
+CREATE TABLE fiscal_periods (period_id NUMBER PRIMARY KEY, status VARCHAR2(20));
+INSERT INTO fiscal_periods VALUES (2026, 'OPEN');
+COMMIT;
+CREATE OR REPLACE PACKAGE billing AUTHID DEFINER AS PROCEDURE close_period(p_period IN NUMBER); END;
+/
+CREATE OR REPLACE PROCEDURE close_period_impl (p_period IN NUMBER)
+AUTHID DEFINER ACCESSIBLE BY (PACKAGE billing) AS
+BEGIN UPDATE fiscal_periods SET status = 'CLOSED' WHERE period_id = p_period; END;
+/
+-- ACCESSIBLE BY identifies the allowed program unit; this wrapper is the public package entry point.
+CREATE OR REPLACE PACKAGE BODY billing AS
+  PROCEDURE close_period(p_period IN NUMBER) IS BEGIN close_period_impl(p_period); END;
+END;
+/
+EXEC list_my_orders;
+EXEC billing.close_period(2026);
+SELECT period_id, status FROM fiscal_periods;

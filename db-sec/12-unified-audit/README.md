@@ -1,19 +1,19 @@
 # Unified Auditing: practical policies and trail hygiene
 
-**What it shows:** Applies score-read auditing in the flagship schema and includes a trail query.
+**Runs where:** Local Oracle Free.
 
-**Runnable code:** [Audit trail SQL](audit.sql)
+**What it shows:** Article Unified Auditing baseline/custom policies and managed trail hygiene; local file is executable against the demo DB.
 
-**Prerequisites:** See the run command below. OCI examples require an OCI tenancy and CLI configured with placeholders; local examples require Java 21, Maven, Docker, and Docker Compose as applicable.
+**Article example:** [article-example.md](article-example.md)
 
-**Run:** `docker compose up -d oracle; initialization applies the policy.`
+**Prerequisites:** Docker Compose and Oracle Database Free.
 
-**Expected output:** The command succeeds and reports the created resource, successful connection, or Terraform validation. For manual steps, record the console verification result locally.
+**Run:** `docker compose up -d oracle && docker compose exec -T oracle sqlplus -s / as sysdba < db-sec/12-unified-audit/audit.sql`
 
-**Cleanup:** For local containers run `docker compose down -v`. For OCI resources, run `terraform -chdir=terraform destroy` only after reviewing the plan and remove any manually-created Identity Domain policies or secrets.
+**Expected output:** Queries show enabled policies and audit trail rows.
 
-**Article:** [Unified Auditing: practical policies and trail hygiene](https://www.imshubh.com/blog.html#oracle-ace) (TODO: replace with the direct article URL).
+**Cleanup:** `docker compose down -v`.
 
-**Source fidelity:** The referenced article-specific `.docx` source was not present in this workspace. This runnable example is reconstructed from the published article topic; replace/compare it with the source document when available.
+**Article:** [Unified Auditing: practical policies and trail hygiene](https://www.imshubh.com/blog.html#oracle-ace).
 
 **TODO tested-on:** ____________________

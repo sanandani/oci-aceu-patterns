@@ -1,19 +1,19 @@
 # Compartment design and movement: policy implications
 
-**What it shows:** Terraform creates a dedicated child compartment and demonstrates compartment-scoped policies; movement is a console review.
+**Runs where:** OCI / Terraform + manual move review.
 
-**Runnable code:** [Compartment module](../../terraform/modules/compartment/main.tf)
+**What it shows:** Ancestor policy and compartment movement implications, including access checks before and after a move.
 
-**Prerequisites:** See the run command below. OCI examples require an OCI tenancy and CLI configured with placeholders; local examples require Java 21, Maven, Docker, and Docker Compose as applicable.
+**Article example:** [article-example.md](article-example.md)
 
-**Run:** `terraform -chdir=terraform init && terraform -chdir=terraform validate`. To provision in your tenancy, copy `terraform/terraform.tfvars.example` to ignored `terraform/local.tfvars`, replace placeholders with your account/network/image values, inspect `terraform -chdir=terraform plan -var-file=local.tfvars`, then apply only after reviewing the resources.
+**Prerequisites:** OCI CLI/Terraform and configured OCI tenancy.
 
-**Expected output:** The command succeeds and reports the created resource, successful connection, or Terraform validation. For manual steps, record the console verification result locally.
+**Run:** `terraform -chdir=../../terraform validate; review article-example.md for the move runbook.`
 
-**Cleanup:** For local containers run `docker compose down -v`. For OCI resources, run `terraform -chdir=terraform destroy -var-file=local.tfvars` only after reviewing the plan and remove any manually-created Identity Domain policies or secrets.
+**Expected output:** Terraform validates; compartment movement verification is manual.
 
-**Article:** [Compartment design and movement: policy implications](https://www.imshubh.com/blog.html#oracle-ace) (TODO: replace with the direct article URL).
+**Cleanup:** `terraform -chdir=../../terraform destroy only after reviewing the plan; remove manually created resources`.
 
-**Source fidelity:** The referenced article-specific `.docx` source was not present in this workspace. This runnable example is reconstructed from the published article topic; replace/compare it with the source document when available.
+**Article:** [Compartment design and movement: policy implications](https://www.imshubh.com/blog.html#oracle-ace).
 
 **TODO tested-on:** ____________________

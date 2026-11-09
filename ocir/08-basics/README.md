@@ -1,19 +1,19 @@
 # OCIR basics: push/pull, private repos, auth tokens
 
-**What it shows:** Terraform creates a private OCIR repository; commands use placeholder region/namespace and short-lived auth-token guidance.
+**Runs where:** OCI / Docker CLI.
 
-**Runnable code:** [Private OCIR repository module](../../terraform/modules/ocir/main.tf) and [push/pull example](ocir-example.sh)
+**What it shows:** Private OCIR repository creation, auth-token login, versioned tag/push, and separated policies.
 
-**Prerequisites:** See the run command below. OCI examples require an OCI tenancy and CLI configured with placeholders; local examples require Java 21, Maven, Docker, and Docker Compose as applicable.
+**Article example:** [article-example.md](article-example.md)
 
-**Run:** `terraform -chdir=terraform init && terraform -chdir=terraform validate`. To push the container, copy `terraform/terraform.tfvars.example` to ignored `terraform/local.tfvars`, replace placeholders, then run `./ocir/08-basics/ocir-example.sh` with `OCIR_REGION_KEY`, `OCIR_NAMESPACE`, and `OCIR_USERNAME`; the script prompts for the auth token without echoing it.
+**Prerequisites:** See the runbook; OCI account and feature access may be required.
 
-**Expected output:** The command succeeds and reports the created resource, successful connection, or Terraform validation. For manual steps, record the console verification result locally.
+**Run:** `bash ocir-example.sh`
 
-**Cleanup:** For local containers run `docker compose down -v`. For OCI resources, run `terraform -chdir=terraform destroy` only after reviewing the plan and remove any manually-created Identity Domain policies or secrets.
+**Expected output:** Commands require OCI CLI, Docker, registry endpoint, and auth token.
 
-**Article:** [OCIR basics: push/pull, private repos, auth tokens](https://www.imshubh.com/blog.html#oracle-ace) (TODO: replace with the direct article URL).
+**Cleanup:** `Remove temporary identities, secrets, wallet files, and test resources using the service Console/CLI.`.
 
-**Source fidelity:** The referenced article-specific `.docx` source was not present in this workspace. This runnable example is reconstructed from the published article topic; replace/compare it with the source document when available.
+**Article:** [OCIR basics: push/pull, private repos, auth tokens](https://www.imshubh.com/blog.html#oracle-ace).
 
 **TODO tested-on:** ____________________

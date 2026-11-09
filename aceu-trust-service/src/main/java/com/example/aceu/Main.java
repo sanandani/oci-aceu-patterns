@@ -24,10 +24,11 @@ public final class Main {
             p.setUser(env("DB_USER", "aceu_app")); p.setPassword(env("DB_PASSWORD", "aceu_app_local_only"));
             p.setInitialPoolSize(Integer.parseInt(env("UCP_MIN", "2")));
             p.setMinPoolSize(Integer.parseInt(env("UCP_MIN", "2")));
-            p.setMaxPoolSize(Integer.parseInt(env("UCP_MAX", "8")));
+            p.setMaxPoolSize(Integer.parseInt(env("UCP_MAX", "20")));
             p.setValidateConnectionOnBorrow(true); p.setSQLForValidateConnection("SELECT 1 FROM dual");
-            p.setConnectionWaitTimeout(Integer.parseInt(env("UCP_WAIT_SECONDS", "5")));
-            p.setSecondsToTrustIdleConnection(0);
+            p.setConnectionWaitTimeout(Integer.parseInt(env("UCP_WAIT_SECONDS", "3")));
+            p.setSecondsToTrustIdleConnection(5);
+            p.setInactiveConnectionTimeout(300);
             return p;
         } catch (SQLException e) { throw new ExceptionInInitializerError(e); }
     }
