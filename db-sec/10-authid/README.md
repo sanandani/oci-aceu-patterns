@@ -16,4 +16,4 @@
 
 **Article:** [Oracle DB: invoker's vs definer's rights for least-privilege code](https://www.imshubh.com/blog.html#oracle-ace).
 
-**TODO tested-on:** ____________________
+**Tested 2026-11-08 (PST) on macOS arm64, Docker 29.8.0, Temurin OpenJDK 21.0.8, gvenzl/oracle-free:23-slim-faststart (linux/arm64).**

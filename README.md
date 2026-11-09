@@ -24,7 +24,9 @@ Requirements: Java 21, Maven, Docker Compose, Python 3.10+ for `aceu-scan`. Terr
 ./scripts/demo.sh
 ```
 
-The script builds the Java 21 image, starts `gvenzl/oracle-free:23-slim-faststart`, waits for the database/service, makes six REST calls, and prints the Unified Audit trail. It seeds three synthetic profiles. The service exposes `POST /profiles`, `GET /profiles/{id}/score`, `POST /rank`, `POST /contest`, and `GET /health`. Explicit consent is required for profile creation; scoring, ranking, and contesting exclude profiles without consent.
+The script builds the Java 21 image, starts `gvenzl/oracle-free:23-slim-faststart`, waits for the database/service, makes six REST calls, and prints the Unified Audit trail. It seeds three synthetic profiles.
+
+**Tested 2026-11-08 (PST) on macOS arm64, Docker 29.8.0, Temurin OpenJDK 21.0.8, gvenzl/oracle-free:23-slim-faststart (linux/arm64).** The service exposes `POST /profiles`, `GET /profiles/{id}/score`, `POST /rank`, `POST /contest`, and `GET /health`. Explicit consent is required for profile creation; scoring, ranking, and contesting exclude profiles without consent.
 
 To stop the local stack and delete its synthetic database volume: `docker compose down -v`.
 
@@ -37,13 +39,13 @@ To stop the local stack and delete its synthetic database volume: `docker compos
 | `identity-domains/04-federation`, `identity-domains/05-mfa`, `db-sec/11-tde`, `oci-ai/15-language-vision` | Manual verification | Console or account/feature dependent. No claim of execution. |
 | `aceu-scan --fixtures` | Local, offline | Uses synthetic JSON fixtures; online mode is read-only and requires OCI CLI config. |
 
-Each article folder includes a worked example transcribed from the matching enhanced article draft, plus run and cleanup steps. The article series landing page is [Oracle ACE writing](https://www.imshubh.com/blog.html#oracle-ace). Each README keeps a `TODO tested-on` line for the maintainer to fill after running that individual demo.
+Each article folder includes a worked example transcribed from the matching enhanced article draft, plus run and cleanup steps. The article series is [Oracle ACE writing](https://www.imshubh.com/blog.html#oracle-ace). Local demos include the maintainer-reported test environment; OCI and manual verification lines remain TODO.
 
 ## ACE-U service
 
 Java 21, Maven, Helidon SE 4.2.6, Oracle JDBC/UCP, and Oracle Database 23ai Free. The score package ports the Python reference formulas: A uses skill/role Jaccard overlap and authored-skill coverage; C weights verified and inferred evidence; E combines interaction quality, reciprocity, and type diversity; U combines vector-distance rarity and context complementarity, gated by `min(A,C,E)`. All four dimensions expose separate uncertainty and a human-readable explanation. Skill vectors use a deterministic, offline ten-skill vocabulary.
 
-The shared PL/SQL engine uses `AUTHID CURRENT_USER`; the definer-rights compute wrapper is restricted with `ACCESSIBLE BY` to the service package. Score SELECTs are covered by the Unified Auditing policy in `aceu-trust-service/db/03-audit.sql`. The runtime uses a restricted `ACEU_APP` account with only required table operations and package execution. UCP defaults are min 2 / max 8, validation on borrow, 5 second wait, with live pool metrics logged by `/health`.
+The shared PL/SQL engine uses `AUTHID CURRENT_USER`; the definer-rights compute wrapper is restricted with `ACCESSIBLE BY` to the service package. Score SELECTs are covered by the Unified Auditing policy in `aceu-trust-service/db/03-audit.sql`. The runtime uses a restricted `ACEU_APP` account with only required table operations and package execution. UCP defaults are min 2 / max 20, validation on borrow, 5-second idle trust, 3-second wait, and 300-second inactive timeout, with live pool metrics logged by `/health`.
 
 ## OCI scanner
 
@@ -64,4 +66,4 @@ Rule definitions are in `rules/*.yaml`; adding checks against the listed OCI res
 
 ## Verification
 
-CI runs Maven unit and Oracle-container integration tests, the six-call compose demo, pytest per scanner rule, Terraform format, and Terraform validation. Local runs performed for this repository are recorded in the work session; each demo README retains a TODO tested-on line for your own future runs.
+CI runs Maven unit and Oracle-container integration tests, the six-call compose demo, pytest per scanner rule, Terraform format, and Terraform validation. The flagship demo and local-run article folders record the maintainer-reported environment. OCI deployment and manual-verification steps retain their TODO tested-on lines.

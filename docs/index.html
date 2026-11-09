@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A synthetic-data-only Oracle Cloud, Database, Java, and ACE-U portfolio.">
+  <title>OCI ACE-U Patterns</title>
+  <style>
+    :root { color-scheme: light; --ink:#172b4d; --muted:#52637a; --line:#d7e0ea; --blue:#1456a0; --panel:#f4f7fa; }
+    * { box-sizing:border-box; }
+    body { margin:0; font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif; color:var(--ink); }
+    main { max-width:1100px; margin:auto; padding:2rem 1.25rem 4rem; }
+    h1,h2 { line-height:1.2; } h1 { font-size:clamp(2rem,5vw,3.5rem); margin:.3rem 0; }
+    h2 { margin-top:2.5rem; } a { color:var(--blue); } p,li { color:var(--muted); }
+    .hero { border-bottom:1px solid var(--line); padding:2rem 0; }
+    .callout { background:var(--panel); border-left:4px solid var(--blue); padding:1rem 1.2rem; }
+    code,pre { background:var(--panel); border-radius:4px; } code { padding:.15rem .3rem; }
+    pre { overflow:auto; padding:1rem; border:1px solid var(--line); }
+    table { width:100%; border-collapse:collapse; } th,td { text-align:left; vertical-align:top; padding:.7rem; border:1px solid var(--line); } th { background:var(--panel); }
+    .links { columns:2; padding-left:1.4rem; } .links li { break-inside:avoid; margin:.35rem 0; }
+    svg { display:block; width:100%; height:auto; background:var(--panel); border:1px solid var(--line); border-radius:8px; }
+    .node { fill:white; stroke:#1456a0; stroke-width:2; } .edge { stroke:#52637a; stroke-width:2; marker-end:url(#arrow); }
+    .label { fill:#172b4d; font:16px system-ui,sans-serif; text-anchor:middle; }
+    @media(max-width:650px) { .links { columns:1; } table { font-size:.9rem; } th,td { padding:.45rem; } }
+  </style>
+</head>
+<body><main>
+  <header class="hero">
+    <p>Oracle portfolio · synthetic data only</p>
+    <h1>OCI ACE-U Patterns</h1>
+    <p>A verifiable portfolio of OCI, Oracle Database, and Java examples, including a runnable ACE-U trust service and a read-only OCI posture scanner. The trust scores demonstrate a research implementation; they are not a validated assessment of real people.</p>
+    <p><a href="https://imshubh.com/blog.html">Oracle ACE article series</a> · <a href="https://github.com/sanandani/oci-aceu-patterns">GitHub repository</a></p>
+  </header>
+
+  <section><h2>Architecture</h2>
+    <svg viewBox="0 0 1000 300" role="img" aria-labelledby="arch-title arch-desc">
+      <title id="arch-title">Portfolio architecture</title><desc id="arch-desc">REST clients call the Java Helidon service, which uses Oracle UCP and Database 23ai for PL/SQL scoring, vector search, and auditing. A separate scanner reads OCI posture using YAML rules or fixtures.</desc>
+      <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#52637a"/></marker></defs>
+      <rect class="node" x="25" y="80" width="150" height="65" rx="8"/><text class="label" x="100" y="118">REST clients</text>
+      <rect class="node" x="225" y="80" width="190" height="65" rx="8"/><text class="label" x="320" y="118">Helidon SE · Java 21</text>
+      <rect class="node" x="470" y="80" width="150" height="65" rx="8"/><text class="label" x="545" y="118">Oracle UCP</text>
+      <rect class="node" x="675" y="55" width="285" height="115" rx="8"/><text class="label" x="817" y="90">Oracle Database 23ai Free</text><text class="label" x="817" y="120">PL/SQL · VECTOR_DISTANCE</text><text class="label" x="817" y="150">Unified Audit</text>
+      <line class="edge" x1="175" y1="112" x2="220" y2="112"/><line class="edge" x1="415" y1="112" x2="465" y2="112"/><line class="edge" x1="620" y1="112" x2="670" y2="112"/>
+      <rect class="node" x="225" y="215" width="230" height="60" rx="8"/><text class="label" x="340" y="250">aceu-scan · OCI SDK · YAML</text>
+      <rect class="node" x="675" y="215" width="285" height="60" rx="8"/><text class="label" x="817" y="250">OCI IAM · Vault · OCIR (read-only)</text>
+      <line class="edge" x1="455" y1="245" x2="670" y2="245"/>
+    </svg>
+  </section>
+
+  <section><h2>Quickstart</h2>
+    <p>Requires Java 21, Maven, and Docker Compose. The demo uses synthetic profiles, performs six REST calls, and prints the database audit trail.</p>
+    <pre><code>git clone https://github.com/sanandani/oci-aceu-patterns.git
+cd oci-aceu-patterns
+./scripts/demo.sh
+# stop and remove the local database volume:
+docker compose down -v</code></pre>
+  </section>
+
+  <section><h2>What runs where</h2>
+    <table><thead><tr><th>Examples</th><th>Run mode</th><th>Notes</th></tr></thead><tbody>
+      <tr><td><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/java-oci/09-min-container">09</a>, <a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/db-sec/10-authid">10</a>, <a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/db-sec/12-unified-audit">12</a>, <a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/java-oci/13-jdbc-tls">13</a>, <a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/java-oci/14-ucp-tuning">14</a></td><td>Local Oracle Free</td><td>13 uses plain TCP locally; TLS and wallet configuration are documented separately. 09 builds the service image.</td></tr>
+      <tr><td>01, 02, 03, 06, 07, 08, 16</td><td>OCI / Terraform</td><td>Always Free eligible resources where available; networking, images, quotas, and region are account-specific. CI validates; it never applies Terraform.</td></tr>
+      <tr><td>04, 05, 11, 15</td><td>Manual verification</td><td>Console, database edition, or paid-feature dependent. No automated verification claim.</td></tr>
+      <tr><td><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/aceu-scan">aceu-scan --fixtures</a></td><td>Local, offline</td><td>Synthetic fixtures; live mode uses read-only OCI API calls.</td></tr>
+    </tbody></table>
+  </section>
+
+  <section><h2>All 16 article folders</h2>
+    <ol class="links">
+      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/oci-iam/01-instance-principals">01 · Instance principals</a></li>
+      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/oci-iam/02-least-privilege">02 · Least-privilege IAM</a></li>
+      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/oci-iam/03-dynamic-groups">03 · Dynamic groups</a></li>
+      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/identity-domains/04-federation">04 · Federation</a></li>
+      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/identity-domains/05-mfa">05 · MFA rollout</a></li>
+      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/oci-vault/06-secrets-basics">06 · Vault secrets</a></li>
+      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/oci-vault/07-db-wallets">07 · DB wallets</a></li>
+      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/ocir/08-basics">08 · OCIR</a></li>
+      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/java-oci/09-min-container">09 · Minimal Java container</a></li>
+      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/db-sec/10-authid">10 · AUTHID rights</a></li>
+      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/db-sec/11-tde">11 · TDE</a></li>
+      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/db-sec/12-unified-audit">12 · Unified Auditing</a></li>
+      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/java-oci/13-jdbc-tls">13 · JDBC TLS / mTLS</a></li>
+      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/java-oci/14-ucp-tuning">14 · UCP tuning</a></li>
+      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/oci-ai/15-language-vision">15 · Language and Vision</a></li>
+      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/oci-iam/16-compartments">16 · Compartments</a></li>
+    </ol>
+  </section>
+</main></body></html>
