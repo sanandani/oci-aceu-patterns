@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use ACE-U, cite the conceptual paper and indicate that this software is a synthetic reference implementation."
+title: "Trust-Aware Professional Identity Representation in AI-Mediated Systems"
+authors:
+  - family-names: Anandani
+    given-names: Shubham
+conference:
+  name: "IEEE SoutheastCon 2026"
+year: 2026
+url: "https://github.com/sanandani/ace-u-trust-framework/blob/main/paper/%5BPaper%5D%20IEEE%20SoutheastCon%20-%20Trust-Aware%20Professional%20Identity%20Representation%20in%20AI-Mediated%20Systems.pdf"
