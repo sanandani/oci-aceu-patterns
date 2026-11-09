@@ -17,7 +17,7 @@
     code,pre { background:var(--panel); border-radius:4px; } code { padding:.15rem .3rem; }
     pre { overflow:auto; padding:1rem; border:1px solid var(--line); }
     table { width:100%; border-collapse:collapse; } th,td { text-align:left; vertical-align:top; padding:.7rem; border:1px solid var(--line); } th { background:var(--panel); }
-    .links { columns:2; padding-left:1.4rem; } .links li { break-inside:avoid; margin:.35rem 0; }
+    .links { columns:2; list-style:none; padding-left:0; } .links li { break-inside:avoid; margin:.35rem 0; }
     svg { display:block; width:100%; height:auto; background:var(--panel); border:1px solid var(--line); border-radius:8px; }
     .node { fill:white; stroke:#1456a0; stroke-width:2; } .edge { stroke:#52637a; stroke-width:2; marker-end:url(#arrow); }
     .label { fill:#172b4d; font:16px system-ui,sans-serif; text-anchor:middle; }
@@ -29,7 +29,8 @@
     <p>Oracle portfolio · synthetic data only</p>
     <h1>OCI ACE-U Patterns</h1>
     <p>A verifiable portfolio of OCI, Oracle Database, and Java examples, including a runnable ACE-U trust service and a read-only OCI posture scanner. The trust scores demonstrate a research implementation; they are not a validated assessment of real people.</p>
-    <p><a href="https://imshubh.com/blog.html">Oracle ACE article series</a> · <a href="https://github.com/sanandani/oci-aceu-patterns">GitHub repository</a></p>
+    <p><a href="https://imshubh.com/blog.html" target="_blank" rel="noopener noreferrer">Oracle ACE article series</a> · <a href="https://github.com/sanandani/oci-aceu-patterns" target="_blank" rel="noopener noreferrer">GitHub repository</a></p>
+    <p>Built by Shubham Anandani · <a href="https://www.imshubh.com" target="_blank" rel="noopener noreferrer">www.imshubh.com</a></p>
   </header>
 
   <section><h2>Architecture</h2>
@@ -58,31 +59,32 @@ docker compose down -v</code></pre>
 
   <section><h2>What runs where</h2>
     <table><thead><tr><th>Examples</th><th>Run mode</th><th>Notes</th></tr></thead><tbody>
-      <tr><td><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/java-oci/09-min-container">09</a>, <a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/db-sec/10-authid">10</a>, <a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/db-sec/12-unified-audit">12</a>, <a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/java-oci/13-jdbc-tls">13</a>, <a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/java-oci/14-ucp-tuning">14</a></td><td>Local Oracle Free</td><td>13 uses plain TCP locally; TLS and wallet configuration are documented separately. 09 builds the service image.</td></tr>
-      <tr><td>01, 02, 03, 06, 07, 08, 16</td><td>OCI / Terraform</td><td>Always Free eligible resources where available; networking, images, quotas, and region are account-specific. CI validates; it never applies Terraform.</td></tr>
-      <tr><td>04, 05, 11, 15</td><td>Manual verification</td><td>Console, database edition, or paid-feature dependent. No automated verification claim.</td></tr>
-      <tr><td><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/aceu-scan">aceu-scan --fixtures</a></td><td>Local, offline</td><td>Synthetic fixtures; live mode uses read-only OCI API calls.</td></tr>
+      <tr><td><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/java-oci/09-min-container" target="_blank" rel="noopener noreferrer">09</a>, <a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/db-sec/10-authid" target="_blank" rel="noopener noreferrer">10</a>, <a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/db-sec/12-unified-audit" target="_blank" rel="noopener noreferrer">12</a>, <a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/java-oci/13-jdbc-tls" target="_blank" rel="noopener noreferrer">13</a>, <a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/java-oci/14-ucp-tuning" target="_blank" rel="noopener noreferrer">14</a></td><td>Local Oracle Free</td><td>13 uses plain TCP locally; TLS and wallet configuration are documented separately. 09 builds the service image.</td></tr>
+      <tr><td><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/oci-iam/01-instance-principals" target="_blank" rel="noopener noreferrer">01</a>, <a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/oci-iam/02-least-privilege" target="_blank" rel="noopener noreferrer">02</a>, <a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/oci-iam/03-dynamic-groups" target="_blank" rel="noopener noreferrer">03</a>, <a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/oci-vault/06-secrets-basics" target="_blank" rel="noopener noreferrer">06</a>, <a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/oci-vault/07-db-wallets" target="_blank" rel="noopener noreferrer">07</a>, <a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/ocir/08-basics" target="_blank" rel="noopener noreferrer">08</a>, <a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/oci-iam/16-compartments" target="_blank" rel="noopener noreferrer">16</a></td><td>OCI / Terraform</td><td>Always Free eligible resources where available; networking, images, quotas, and region are account-specific. CI validates; it never applies Terraform.</td></tr>
+      <tr><td><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/identity-domains/04-federation" target="_blank" rel="noopener noreferrer">04</a>, <a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/identity-domains/05-mfa" target="_blank" rel="noopener noreferrer">05</a>, <a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/db-sec/11-tde" target="_blank" rel="noopener noreferrer">11</a>, <a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/oci-ai/15-language-vision" target="_blank" rel="noopener noreferrer">15</a></td><td>Manual verification</td><td>Console, database edition, or paid-feature dependent. No automated verification claim.</td></tr>
+      <tr><td><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/aceu-scan" target="_blank" rel="noopener noreferrer">aceu-scan --fixtures</a></td><td>Local, offline</td><td>Synthetic fixtures; live mode uses read-only OCI API calls.</td></tr>
     </tbody></table>
   </section>
 
   <section><h2>All 16 article folders</h2>
     <ol class="links">
-      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/oci-iam/01-instance-principals">01 · Instance principals</a></li>
-      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/oci-iam/02-least-privilege">02 · Least-privilege IAM</a></li>
-      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/oci-iam/03-dynamic-groups">03 · Dynamic groups</a></li>
-      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/identity-domains/04-federation">04 · Federation</a></li>
-      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/identity-domains/05-mfa">05 · MFA rollout</a></li>
-      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/oci-vault/06-secrets-basics">06 · Vault secrets</a></li>
-      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/oci-vault/07-db-wallets">07 · DB wallets</a></li>
-      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/ocir/08-basics">08 · OCIR</a></li>
-      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/java-oci/09-min-container">09 · Minimal Java container</a></li>
-      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/db-sec/10-authid">10 · AUTHID rights</a></li>
-      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/db-sec/11-tde">11 · TDE</a></li>
-      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/db-sec/12-unified-audit">12 · Unified Auditing</a></li>
-      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/java-oci/13-jdbc-tls">13 · JDBC TLS / mTLS</a></li>
-      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/java-oci/14-ucp-tuning">14 · UCP tuning</a></li>
-      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/oci-ai/15-language-vision">15 · Language and Vision</a></li>
-      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/oci-iam/16-compartments">16 · Compartments</a></li>
+      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/oci-iam/01-instance-principals" target="_blank" rel="noopener noreferrer">01 · Instance principals</a></li>
+      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/oci-iam/02-least-privilege" target="_blank" rel="noopener noreferrer">02 · Least-privilege IAM</a></li>
+      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/oci-iam/03-dynamic-groups" target="_blank" rel="noopener noreferrer">03 · Dynamic groups</a></li>
+      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/identity-domains/04-federation" target="_blank" rel="noopener noreferrer">04 · Federation</a></li>
+      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/identity-domains/05-mfa" target="_blank" rel="noopener noreferrer">05 · MFA rollout</a></li>
+      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/oci-vault/06-secrets-basics" target="_blank" rel="noopener noreferrer">06 · Vault secrets</a></li>
+      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/oci-vault/07-db-wallets" target="_blank" rel="noopener noreferrer">07 · DB wallets</a></li>
+      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/ocir/08-basics" target="_blank" rel="noopener noreferrer">08 · OCIR</a></li>
+      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/java-oci/09-min-container" target="_blank" rel="noopener noreferrer">09 · Minimal Java container</a></li>
+      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/db-sec/10-authid" target="_blank" rel="noopener noreferrer">10 · AUTHID rights</a></li>
+      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/db-sec/11-tde" target="_blank" rel="noopener noreferrer">11 · TDE</a></li>
+      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/db-sec/12-unified-audit" target="_blank" rel="noopener noreferrer">12 · Unified Auditing</a></li>
+      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/java-oci/13-jdbc-tls" target="_blank" rel="noopener noreferrer">13 · JDBC TLS / mTLS</a></li>
+      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/java-oci/14-ucp-tuning" target="_blank" rel="noopener noreferrer">14 · UCP tuning</a></li>
+      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/oci-ai/15-language-vision" target="_blank" rel="noopener noreferrer">15 · Language and Vision</a></li>
+      <li><a href="https://github.com/sanandani/oci-aceu-patterns/tree/main/oci-iam/16-compartments" target="_blank" rel="noopener noreferrer">16 · Compartments</a></li>
     </ol>
   </section>
+  <footer><p>Built by Shubham Anandani · <a href="https://www.imshubh.com" target="_blank" rel="noopener noreferrer">www.imshubh.com</a></p></footer>
 </main></body></html>

@@ -2,6 +2,8 @@
 
 A synthetic-data-only Oracle portfolio: 16 runnable or manually verified examples from the Oracle ACE article series, an Oracle Database 23ai ACE-U scoring service, and a read-only OCI posture scanner. ACE-U is an inspectable conceptual framework, not a validated assessment of people. No real professional profiles are used or seeded.
 
+Built by Shubham Anandani · [www.imshubh.com](https://www.imshubh.com)
+
 ## Architecture
 
 ```mermaid
