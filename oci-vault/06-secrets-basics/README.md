@@ -16,4 +16,4 @@
 
 **Article:** [Practical secrets with OCI Vault: creation, rotation, and usage](https://www.imshubh.com/articles/oracle-ace/practical-secrets-with-oci-vault-creation-rotation-and-usage.html).
 
-**Article date:** 2026-01-23 · **Verified date (maintainer-reported):** Nov 8, 2026.
+**Verification status:** Not yet applied to a live tenancy.

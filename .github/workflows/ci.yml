@@ -28,6 +28,17 @@ jobs:
           ACEU_IT_USER: aceu_app
           ACEU_IT_PASSWORD: aceu_app_local_only
         run: mvn -B -f aceu-trust-service/pom.xml test
+      - name: Require Oracle integration test to run
+        run: |
+          python - <<'PY'
+          import xml.etree.ElementTree as ET
+          report = ET.parse("aceu-trust-service/target/surefire-reports/TEST-com.example.aceu.OracleIntegrationTest.xml").getroot()
+          assert report.attrib.get("tests") == "1", report.attrib
+          assert report.attrib.get("skipped") == "0", report.attrib
+          assert report.attrib.get("failures") == "0", report.attrib
+          assert report.attrib.get("errors") == "0", report.attrib
+          print("Oracle integration test ran and passed (0 skipped).")
+          PY
       - name: REST demo and audit verification
         run: ./scripts/demo.sh
       - name: Scanner rule tests

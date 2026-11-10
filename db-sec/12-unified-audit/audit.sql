@@ -1,4 +1,5 @@
 -- Local verification query for the score-read policy installed by the demo.
+WHENEVER SQLERROR EXIT SQL.SQLCODE
 -- The full article policy and retention examples are in article-example.md.
 ALTER SESSION SET CONTAINER=FREEPDB1;
 SET PAGESIZE 50 LINESIZE 220

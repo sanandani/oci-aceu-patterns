@@ -16,4 +16,4 @@
 
 **Article:** [OCIR basics: push/pull, private repos, auth tokens](https://www.imshubh.com/articles/oracle-ace/ocir-basics-push-pull-private-repos-auth-tokens.html).
 
-**Article date:** 2026-03-07 · **Verified date (maintainer-reported):** Nov 8, 2026.
+**Verification status:** Not yet applied to a live tenancy.

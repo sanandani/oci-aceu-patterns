@@ -16,4 +16,4 @@
 
 **Article:** [TDE quickstart and keystore hygiene](https://www.imshubh.com/articles/oracle-ace/tde-quickstart-and-keystore-hygiene.html).
 
-**Article date:** 2026-06-28 · **Verified date (maintainer-reported):** Nov 8, 2026.
+**Verification status:** Not yet executed; manual runbook.

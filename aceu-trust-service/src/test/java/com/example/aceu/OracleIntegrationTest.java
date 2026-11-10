@@ -1,16 +1,16 @@
 package com.example.aceu;
 
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
 import java.sql.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class OracleIntegrationTest {
     @Test
-    @EnabledIfEnvironmentVariable(named="ACEU_IT_URL", matches=".+")
     void oracle23aiSchemaVectorAndPlsqlScoringWorkTogether() throws Exception {
-        String url=System.getenv("ACEU_IT_URL");
-        try(Connection c=DriverManager.getConnection(url,System.getenv("ACEU_IT_USER"),System.getenv("ACEU_IT_PASSWORD"))) {
+        String url=env("ACEU_IT_URL", "jdbc:oracle:thin:@localhost:1521/FREEPDB1");
+        String user=env("ACEU_IT_USER", "aceu_app");
+        String password=env("ACEU_IT_PASSWORD", "aceu_app_local_only");
+        try(Connection c=DriverManager.getConnection(url,user,password)) {
             c.setSchema("ACEU");
             String payload="{\"skills\":[\"sql\",\"cloud\"],\"prior_skills\":[\"sql\"],\"roles\":[\"engineer\"],\"prior_roles\":[\"engineer\"],\"history\":[\"synthetic\"],\"authored_skills\":[\"sql\"],\"credibility_signals\":[{\"status\":\"verified\",\"strength\":0.9}],\"context_relevance\":0.9}";
             long id;
@@ -24,5 +24,10 @@ class OracleIntegrationTest {
                 p.setLong(1,id);try(ResultSet r=p.executeQuery()){assertTrue(r.next());for(int i=1;i<=8;i++)assertTrue(r.getDouble(i)>=0 && r.getDouble(i)<=1);assertTrue(r.getDouble(4)>0,"VECTOR_DISTANCE U score should be positive for the fixture");}
             }
         }
+    }
+
+    private static String env(String name, String fallback) {
+        String value = System.getenv(name);
+        return value == null || value.isBlank() ? fallback : value;
     }
 }

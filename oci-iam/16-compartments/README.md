@@ -16,4 +16,4 @@
 
 **Article:** [Compartment design and movement: policy implications](https://www.imshubh.com/articles/oracle-ace/compartment-design-and-movement-policy-implications.html).
 
-**Article date:** 2026-10-16 · **Verified date (maintainer-reported):** Nov 8, 2026.
+**Verification status:** Not yet applied to a live tenancy.

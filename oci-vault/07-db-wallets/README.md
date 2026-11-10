@@ -16,4 +16,4 @@
 
 **Article:** [Vault + DB wallets: secure distribution patterns (illustrative)](https://www.imshubh.com/articles/oracle-ace/vault-db-wallets-secure-distribution-patterns-illustrative.html).
 
-**Article date:** 2026-02-15 · **Verified date (maintainer-reported):** Nov 8, 2026.
+**Verification status:** Not yet applied to a live tenancy.

@@ -16,4 +16,4 @@
 
 **Article:** [Identity Domains: SAML/OIDC federation setup notes](https://www.imshubh.com/articles/oracle-ace/identity-domains-saml-oidc-federation-setup-notes.html).
 
-**Article date:** 2025-11-09 · **Verified date (maintainer-reported):** Nov 8, 2026.
+**Verification status:** Not yet executed; manual runbook.

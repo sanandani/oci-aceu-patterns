@@ -1,6 +1,8 @@
 cff-version: 1.2.0
 message: "If you use ACE-U, cite the conceptual paper and indicate that this software is a synthetic reference implementation."
 title: "Trust-Aware Professional Identity Representation in AI-Mediated Systems"
+version: 1.0.0
+version: 1.0.0
 authors:
   - family-names: Anandani
     given-names: Shubham

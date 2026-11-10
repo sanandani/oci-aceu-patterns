@@ -16,4 +16,4 @@
 
 **Article:** [AI Language and Vision: secure triage pipelines (illustrative)](https://www.imshubh.com/articles/oracle-ace/ai-language-and-vision-secure-triage-pipelines-illustrative.html).
 
-**Article date:** 2026-10-10 · **Verified date (maintainer-reported):** Nov 8, 2026.
+**Verification status:** Not yet executed; manual runbook.

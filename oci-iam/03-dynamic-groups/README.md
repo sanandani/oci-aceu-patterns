@@ -16,4 +16,4 @@
 
 **Article:** [Dynamic groups with tag-based scoping (illustrative patterns)](https://www.imshubh.com/articles/oracle-ace/dynamic-groups-with-tag-based-scoping-illustrative-patterns.html).
 
-**Article date:** 2025-10-02 · **Verified date (maintainer-reported):** Nov 8, 2026.
+**Verification status:** Not yet applied to a live tenancy.

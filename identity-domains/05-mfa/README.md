@@ -16,4 +16,4 @@
 
 **Article:** [Identity Domains: MFA policies and admin-safe rollout](https://www.imshubh.com/articles/oracle-ace/identity-domains-mfa-policies-and-admin-safe-rollout.html).
 
-**Article date:** 2025-12-16 · **Verified date (maintainer-reported):** Nov 8, 2026.
+**Verification status:** Not yet executed; manual runbook.
